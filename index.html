@@ -7,41 +7,18 @@
     <title>Document</title>
   </head>
   <body>
-    <h1 id="hi">hi higer music</h1>
     <div class="alert-box" id="alert">
       Holy guacamoly!
-      <button
-        class="btn"
-        onclick="document.getElementById('alert').style.display='none'"
-      >
-        X
-      </button>
+      <button class="btn" onclick="closeAlert()">X</button>
     </div>
-    <div class="alert-box" id="alert1">
-      Holy guacamoly!
-      <button
-        class="btn"
-        onclick="document.getElementById('alert1').style.display='none'"
-      >
-        X
-      </button>
-    </div>
-    <div class="alert-box" id="alert2">
-      Holy guacamoly!
-      <button
-        class="btn"
-        onclick="document.getElementById('alert2').style.display='none'"
-      >
-        X
-      </button>
-    </div>
-    <button onclick="document.getElementById('alert').style.display='block'">
-      띄우기
-    </button>
+    <button onclick="openAlert()">나와라</button>
     <script>
-      document.getElementById("hi").style.color = "green";
-      document.getElementById("hi").style.fontSize = "16px";
-      //셀렉터: html 요소를 찾기 위해 사용
+      function openAlert() {
+        document.getElementById("alert").style.display = "block";
+      }
+      function closeAlert() {
+        document.getElementById("alert").style.display = "none";
+      }
     </script>
   </body>
 </html>
