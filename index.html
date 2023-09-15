@@ -8,18 +8,20 @@
   </head>
   <body>
     <div class="alert-box" id="alert">
-      Holy guacamoly!
-      <button class="btn" onclick="Alert('none')">X</button>
+      <p id="title">Holy guacamoly!</p>
+      <button id="close">닫기</button>
     </div>
-    <button onclick="Alert1('아이디를 입력하세요. ')">아이디</button>
-    <button onclick="Alert1('비밀번호를 입력하세요. ')">비밀번호</button>
+    <button onclick="alertIdPw('아이디를 입력하세요.')">아이디</button>
+    <button onclick="alertIdPw('비밀번호를 입력하세요.')">비밀번호</button>
     <script>
-      function Alert(a) {
-        document.getElementById("alert").style.display = a;
+      function alertIdPw(a) {
+        document.getElementById("title").innerHTML = a;
+        document.getElementById("alert").style.display = "block";
       }
-      function Alert1(a) {
-        document.getElementById("alert").innerHTML = a;
-      }
+      document.getElementById("close").addEventListener("click", function () {
+        // 콜백함수: 함수 파라미터 자리에 function, 순차적으로 실행하고 싶을 때
+        document.getElementById("alert").style.display = "none";
+      });
     </script>
   </body>
 </html>
