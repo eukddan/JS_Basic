@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="main.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
-    <h4>hitv</h4>
+    <h1 id="hi">hi higer music</h1>
+    <div class="alert-box" id="alert">
+      Holy guacamoly!
+      <button
+        class="btn"
+        onclick="document.getElementById('alert').style.display='none'"
+      >
+        X
+      </button>
+    </div>
+    <div class="alert-box" id="alert1">
+      Holy guacamoly!
+      <button
+        class="btn"
+        onclick="document.getElementById('alert1').style.display='none'"
+      >
+        X
+      </button>
+    </div>
+    <div class="alert-box" id="alert2">
+      Holy guacamoly!
+      <button
+        class="btn"
+        onclick="document.getElementById('alert2').style.display='none'"
+      >
+        X
+      </button>
+    </div>
+    <button onclick="document.getElementById('alert').style.display='block'">
+      띄우기
+    </button>
+    <script>
+      document.getElementById("hi").style.color = "green";
+      document.getElementById("hi").style.fontSize = "16px";
+      //셀렉터: html 요소를 찾기 위해 사용
+    </script>
   </body>
 </html>
