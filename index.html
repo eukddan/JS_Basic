@@ -9,15 +9,16 @@
   <body>
     <div class="alert-box" id="alert">
       Holy guacamoly!
-      <button class="btn" onclick="closeAlert()">X</button>
+      <button class="btn" onclick="Alert('none')">X</button>
     </div>
-    <button onclick="openAlert()">나와라</button>
+    <button onclick="Alert1('아이디를 입력하세요. ')">아이디</button>
+    <button onclick="Alert1('비밀번호를 입력하세요. ')">비밀번호</button>
     <script>
-      function openAlert() {
-        document.getElementById("alert").style.display = "block";
+      function Alert(a) {
+        document.getElementById("alert").style.display = a;
       }
-      function closeAlert() {
-        document.getElementById("alert").style.display = "none";
+      function Alert1(a) {
+        document.getElementById("alert").innerHTML = a;
       }
     </script>
   </body>
