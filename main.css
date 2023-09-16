@@ -1,9 +1,7 @@
-.alert-box {
-  background-color: olivedrab;
-  padding: 20px;
-  color: white;
-  border-radius: 5px;
+.list-group {
+  display: none;
+}
+
+.show {
   display: block;
-  font-size: 20px;
-  margin-top: 10px;
 }
