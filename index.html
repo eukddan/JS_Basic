@@ -10,9 +10,20 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
+    <div class="black-bg">
+      <div class="white-bg">
+        <h4>로그인하세요</h4>
+        <button class="btn btn-danger" id="close">닫기</button>
+      </div>
+    </div>
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
         <span class="navbar-brand">Navbar</span>
@@ -28,8 +39,16 @@
       <li class="list-group-item">A fourth item</li>
       <li class="list-group-item">And a fifth one</li>
     </ul>
-
+    <button type="button" class="btn btn-primary">로그인</button>
     <script>
+      document;
+      $(".btn-primary").on("click", function () {
+        $(".black-bg").addClass("show-modal");
+      });
+      document;
+      $(".btn-danger").on("click", function () {
+        $(".black-bg").removeClass("show-modal");
+      });
       document
         .querySelector(".navbar-toggler")
         .addEventListener("click", function () {
