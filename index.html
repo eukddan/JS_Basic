@@ -21,7 +21,46 @@
     <div class="black-bg">
       <div class="white-bg">
         <h4>로그인하세요</h4>
-        <button class="btn btn-danger" id="close">닫기</button>
+        <form action="success.html">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Email address</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+            <div id="emailHelp" class="form-text">
+              We'll never share your email with anyone else.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+          <div class="mb-3 form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+            />
+            <label class="form-check-label" for="exampleCheck1"
+              >Check me out</label
+            >
+          </div>
+          <button type="submit" id="submit" class="btn btn-primary">
+            제출
+          </button>
+          <button type="button" class="btn btn-danger" id="close">닫기</button>
+        </form>
       </div>
     </div>
 
@@ -40,7 +79,22 @@
       <li class="list-group-item">A fourth item</li>
       <li class="list-group-item">And a fifth one</li>
     </ul>
-    <button type="button" class="btn btn-primary">로그인</button>
+    <div class="main-bg">
+      <h4>Shirts on sale</h4>
+      <button type="button" class="btn btn-primary">로그인</button>
+    </div>
+    <script>
+      $("form").on("submit", function (e) {
+        if (document.querySelector("#exampleInputEmail1").value == "") {
+          e.preventDefault();
+          alert("아이디를 입력하세요.");
+        }
+        if (document.querySelector("#exampleInputPassword1").value == "") {
+          e.preventDefault();
+          alert("비밀번호를 입력하세요.");
+        }
+      });
+    </script>
     <script>
       document;
       $(".btn-primary").on("click", function () {
