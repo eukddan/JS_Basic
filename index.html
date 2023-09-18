@@ -67,6 +67,7 @@
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
         <span class="navbar-brand">Navbar</span>
+        <span class="badge bg-dark" id="badge1">Dark 🔄</span>
         <button class="navbar-toggler" type="button">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -83,6 +84,17 @@
       <h4>Shirts on sale</h4>
       <button type="button" class="btn btn-primary">로그인</button>
     </div>
+    <script>
+      var count = 0;
+      $(".badge").on("click", function () {
+        count++;
+        if (count % 2 == 0) {
+          $(".badge").html("Dark");
+        } else {
+          $(".badge").html("Light");
+        }
+      });
+    </script>
     <script>
       $("form").on("submit", function (e) {
         if (document.querySelector("#exampleInputEmail1").value == "") {
