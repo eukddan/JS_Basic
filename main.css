@@ -32,3 +32,12 @@
   padding: 100px 20px;
   background: seagreen;
 }
+
+.dark {
+  background: black;
+  color: white;
+}
+
+.white-bg {
+  color: black;
+}

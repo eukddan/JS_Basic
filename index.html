@@ -17,7 +17,7 @@
     ></script>
     <link rel="stylesheet" href="main.css" />
   </head>
-  <body>
+  <body id="dark">
     <div class="black-bg">
       <div class="white-bg">
         <h4>로그인하세요</h4>
@@ -88,10 +88,18 @@
       var count = 0;
       $(".badge").on("click", function () {
         count++;
-        if (count % 2 == 0) {
-          $(".badge").html("Dark");
+        if (count % 2 == 1) {
+          $(".badge").html("Light 🔄");
+          $(".main-bg").removeClass("dark");
+          $("#dark").removeClass("dark");
+          $(".navbar").removeClass("navbar-dark");
+          $(".navbar").removeClass("bg-dark");
         } else {
-          $(".badge").html("Light");
+          $(".badge").html("Dark 🔄");
+          $(".main-bg").addClass("dark");
+          $("#dark").addClass("dark");
+          $(".navbar").addClass("navbar-dark");
+          $(".navbar").addClass("bg-dark");
         }
       });
     </script>
