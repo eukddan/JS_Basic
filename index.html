@@ -88,6 +88,15 @@
       <span id="time">5</span>초 이내 구매시 사은품 증정!
     </div>
     <script>
+      $("form").on("submit", function (e) {
+        var 비번 = document.getElementById("exampleInputPassword1").value;
+        if (/[A-Z]/.test(비번) == false) {
+          e.preventDefault();
+          alert("대문자없는데요");
+        }
+      });
+    </script>
+    <script>
       var count1 = 5;
       setInterval(function () {
         count1 -= 1;
