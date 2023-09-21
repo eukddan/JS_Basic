@@ -101,9 +101,17 @@
     <button class="slide-1">1</button>
     <button class="slide-2">2</button>
     <button class="slide-3">3</button>
+    <button class="slide-4">이전</button>
+    <button class="slide-5">다음</button>
     <script>
+      $(".slide-1").on("click", function () {
+        $(".slide-container").css("transform", "translateX(0)");
+      });
       $(".slide-2").on("click", function () {
         $(".slide-container").css("transform", "translateX(-100vw)");
+      });
+      $(".slide-3").on("click", function () {
+        $(".slide-container").css("transform", "translateX(-200vw)");
       });
     </script>
     <script>
