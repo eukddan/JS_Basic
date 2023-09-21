@@ -98,6 +98,14 @@
         <img src="image/car3.png" />
       </div>
     </div>
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+    <script>
+      $(".slide-2").on("click", function () {
+        $(".slide-container").css("transform", "translateX(-100vw)");
+      });
+    </script>
     <script>
       $("form").on("submit", function (e) {
         var password = document.getElementById("exampleInputPassword1").value;
