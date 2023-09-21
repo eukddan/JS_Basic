@@ -87,10 +87,21 @@
     <div class="alert alert-danger">
       <span id="time">5</span>초 이내 구매시 사은품 증정!
     </div>
+    <div class="slide-container">
+      <div class="slide-box">
+        <img src="image/car1.png" />
+      </div>
+      <div class="slide-box">
+        <img src="image/car2.png" />
+      </div>
+      <div class="slide-box">
+        <img src="image/car3.png" />
+      </div>
+    </div>
     <script>
       $("form").on("submit", function (e) {
-        var 비번 = document.getElementById("exampleInputPassword1").value;
-        if (/[A-Z]/.test(비번) == false) {
+        var password = document.getElementById("exampleInputPassword1").value;
+        if (/[A-Z]/.test(password) == false) {
           e.preventDefault();
           alert("대문자없는데요");
         }
