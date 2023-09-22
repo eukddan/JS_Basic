@@ -114,6 +114,13 @@
         );
         currentPic += 1;
       });
+      $(".slide-4").on("click", function () {
+        $(".slide-container").css(
+          "transform",
+          "translateX(-" + (currentPic - 1) + "00vw)"
+        );
+        currentPic -= 1;
+      });
       $(".slide-1").on("click", function () {
         $(".slide-container").css("transform", "translateX(0)");
         currentPic = 1;
