@@ -1,3 +1,7 @@
+:root {
+  scroll-behavior: auto;
+}
+
 .list-group {
   display: none;
 }
@@ -29,6 +33,7 @@
 }
 
 .main-bg {
+  width: 100%;
   padding: 100px 20px;
   background: seagreen;
 }
@@ -59,4 +64,15 @@
 
 .slide-box img {
   width: 100%;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}
+
+.navbar-brand {
+  font-size: 30px;
+  transition: all 0.3s;
 }

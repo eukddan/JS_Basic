@@ -66,7 +66,7 @@
 
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
-        <span class="navbar-brand">Navbar</span>
+        <span class="navbar-brand">Shop</span>
         <span class="badge bg-dark" id="badge1">Dark 🔄</span>
         <button class="navbar-toggler" type="button">
           <span class="navbar-toggler-icon"></span>
@@ -87,6 +87,7 @@
     <div class="alert alert-danger">
       <span id="time">5</span>초 이내 구매시 사은품 증정!
     </div>
+    <div style="height: 1000px"></div>
     <div style="overflow: hidden">
       <div class="slide-container">
         <div class="slide-box">
@@ -105,6 +106,15 @@
     <button class="slide-3">3</button>
     <button class="slide-4">이전</button>
     <button class="slide-5">다음</button>
+    <script>
+      $(window).on("scroll", function () {
+        if (window.scrollY > 100) {
+          $(".navbar-brand").css("font-size", "20px");
+        } else {
+          $(".navbar-brand").css("font-size", "30px");
+        }
+      });
+    </script>
     <script>
       var currentPic = 1;
       $(".slide-5").on("click", function () {
