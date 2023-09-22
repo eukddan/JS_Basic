@@ -87,15 +87,17 @@
     <div class="alert alert-danger">
       <span id="time">5</span>초 이내 구매시 사은품 증정!
     </div>
-    <div class="slide-container">
-      <div class="slide-box">
-        <img src="image/car1.png" />
-      </div>
-      <div class="slide-box">
-        <img src="image/car2.png" />
-      </div>
-      <div class="slide-box">
-        <img src="image/car3.png" />
+    <div style="overflow: hidden">
+      <div class="slide-container">
+        <div class="slide-box">
+          <img src="image/car1.png" />
+        </div>
+        <div class="slide-box">
+          <img src="image/car2.png" />
+        </div>
+        <div class="slide-box">
+          <img src="image/car3.png" />
+        </div>
       </div>
     </div>
     <button class="slide-1">1</button>
@@ -104,23 +106,25 @@
     <button class="slide-4">이전</button>
     <button class="slide-5">다음</button>
     <script>
+      var currentPic = 1;
+      $(".slide-5").on("click", function () {
+        $(".slide-container").css(
+          "transform",
+          "translateX(-" + currentPic + "00vw)"
+        );
+        currentPic += 1;
+      });
       $(".slide-1").on("click", function () {
         $(".slide-container").css("transform", "translateX(0)");
+        currentPic = 1;
       });
       $(".slide-2").on("click", function () {
         $(".slide-container").css("transform", "translateX(-100vw)");
+        currentPic = 2;
       });
       $(".slide-3").on("click", function () {
         $(".slide-container").css("transform", "translateX(-200vw)");
-      });
-    </script>
-    <script>
-      $("form").on("submit", function (e) {
-        var password = document.getElementById("exampleInputPassword1").value;
-        if (/[A-Z]/.test(password) == false) {
-          e.preventDefault();
-          alert("대문자없는데요");
-        }
+        currentPic = 3;
       });
     </script>
     <script>
@@ -168,6 +172,13 @@
         ) {
           e.preventDefault();
           alert("비밀번호 6자리 이상으로 입력하세요.");
+        }
+      });
+      $("form").on("submit", function (e) {
+        var password = document.getElementById("exampleInputPassword1").value;
+        if (/[A-Z]/.test(password) == false) {
+          e.preventDefault();
+          alert("대문자없는데요");
         }
       });
     </script>
