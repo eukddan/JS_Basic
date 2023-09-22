@@ -7,16 +7,20 @@
   </head>
   <body>
     <script>
-      function tsn(a) {
-        if (a % 9 == 0) {
-          console.log("박수 박수");
-        } else if (a % 3 == 0) {
-          console.log("박수");
-        } else {
-          console.log("통과");
-        }
+      function msTrans(m, s) {
+        return (m * 60 + s) * 1000;
       }
-      tsn(15);
+      console.log(msTrans(2, 10));
+    </script>
+    <script>
+      function sale(a, b) {
+        var result = a * 0.9;
+        if (b == true) {
+          return parseFloat(result.toFixed(2)) - 1.5;
+        }
+        return parseFloat(result.toFixed(2));
+      }
+      console.log(sale(70.3, false));
     </script>
   </body>
 </html>
