@@ -63,7 +63,11 @@
         </form>
       </div>
     </div>
-
+    <div class="wrap">
+      <div class="progressbar">
+        <div class="progress"></div>
+      </div>
+    </div>
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
         <span class="navbar-brand">Shop</span>
@@ -112,12 +116,25 @@
     <button class="slide-4">이전</button>
     <button class="slide-5">다음</button>
     <script>
+      $(window).on("scroll", function () {
+        var totalY =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        var currentY = document.documentElement.scrollTop;
+        var percentage = (currentY / totalY) * 100;
+        document.querySelector(".progress").style.width = percentage + "%";
+      });
+    </script>
+    <script>
       $(".terms").on("scroll", function () {
         var scrollAmount = document.querySelector(".terms").scrollTop;
         var scrollAmount1 = document.querySelector(".terms").scrollHeight;
         var divScrollAmount1 = document.querySelector(".terms").clientHeight;
         if (scrollAmount + divScrollAmount1 >= scrollAmount1 - 5) {
           alert("회원 약관을 다 읽으셨습니다.");
+          document
+            .querySelector(".terms")
+            .removeEventListener("scroll", arguments.callee);
         }
       });
     </script>
