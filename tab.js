@@ -1,26 +1,12 @@
-$(".tab-button")
-  .eq(0)
-  .on("click", function () {
-    $(".tab-button").removeClass("orange");
-    $(".tab-button").eq(0).addClass("orange");
-    $(".tab-content").removeClass("show");
-    $(".tab-content").eq(0).addClass("show");
-  });
+var btn = $(".tab-button");
+var content = $(".tab-content");
+var classNum = $(".tab-button").length;
 
-$(".tab-button")
-  .eq(1)
-  .on("click", function () {
-    $(".tab-button").removeClass("orange");
-    $(".tab-button").eq(1).addClass("orange");
-    $(".tab-content").removeClass("show");
-    $(".tab-content").eq(1).addClass("show");
+for (let i = 0; i < classNum; i++) {
+  btn.eq(i).on("click", function () {
+    btn.removeClass("orange");
+    btn.eq(i).addClass("orange");
+    content.removeClass("show");
+    content.eq(i).addClass("show");
   });
-
-$(".tab-button")
-  .eq(2)
-  .on("click", function () {
-    $(".tab-button").removeClass("orange");
-    $(".tab-button").eq(2).addClass("orange");
-    $(".tab-content").removeClass("show");
-    $(".tab-content").eq(2).addClass("show");
-  });
+}
