@@ -87,6 +87,11 @@
     <div class="alert alert-danger">
       <span id="time">5</span>초 이내 구매시 사은품 증정!
     </div>
+    <div class="terms" style="width: 200px; height: 100px; overflow-y: scroll">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex dignissimos
+      nihil dolore sit harum, praesentium deserunt eius quod dolor aliquid,
+      voluptatum, vel itaque maxime error facilis iusto provident corporis sunt!
+    </div>
     <div style="height: 1000px"></div>
     <div style="overflow: hidden">
       <div class="slide-container">
@@ -106,6 +111,16 @@
     <button class="slide-3">3</button>
     <button class="slide-4">이전</button>
     <button class="slide-5">다음</button>
+    <script>
+      $(".terms").on("scroll", function () {
+        var scrollAmount = document.querySelector(".terms").scrollTop;
+        var scrollAmount1 = document.querySelector(".terms").scrollHeight;
+        var divScrollAmount1 = document.querySelector(".terms").clientHeight;
+        if (scrollAmount + divScrollAmount1 >= scrollAmount1 - 5) {
+          alert("회원 약관을 다 읽으셨습니다.");
+        }
+      });
+    </script>
     <script>
       $(window).on("scroll", function () {
         if (window.scrollY > 100) {
