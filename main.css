@@ -23,7 +23,7 @@ body {
   height: 100%;
   position: fixed;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 5;
+  z-index: 6;
   padding: 30px;
   visibility: hidden;
   opacity: 0;
@@ -95,7 +95,7 @@ body {
 }
 
 .progressbar > .progress {
-  width: 45%; /* 프로그래스바 진행 정도 */
+  width: 1%; /* 프로그래스바 진행 정도 */
   height: 100%;
   transition: width 0.3s ease; /* 부드러운 가속도 애니메이션 추가 */
   background-color: skyblue;
