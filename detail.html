@@ -52,6 +52,9 @@
       .show {
         display: block;
       }
+      .hide {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -62,6 +65,18 @@
         ><span class="car-color">white</span>
       </div>
     </div>
+    <form class="container my-5 form-group">
+      <p>상품선택</p>
+      <select class="form-select mt-2">
+        <option>모자</option>
+        <option class="shirts">셔츠</option>
+      </select>
+      <select class="form-select mt-2 hide">
+        <option>95</option>
+        <option>100</option>
+        <option>105</option>
+      </select>
+    </form>
     <div class="container mt-5">
       <ul class="list">
         <li class="tab-button" data-id="0">Products</li>
@@ -78,6 +93,7 @@
         <p>배송정보입니다. Shipping</p>
       </div>
     </div>
+
     <script src="tab.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

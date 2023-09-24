@@ -24,3 +24,14 @@ var car = { name: "제네시스", price: [50000, 3000, 10000], color: "black" };
 document.querySelector(".car-title").innerHTML = car.name;
 document.querySelector(".car-price").innerHTML = car.price[0];
 document.querySelector(".car-color").innerHTML = car.color;
+
+$(".form-select")
+  .eq(0)
+  .on("input", function (e) {
+    var value = e.currentTarget.value;
+    if (value == "셔츠") {
+      $(".form-select").eq(1).removeClass("hide");
+    } else {
+      $(".form-select").eq(1).addClass("hide");
+    }
+  });
