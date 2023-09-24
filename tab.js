@@ -29,9 +29,23 @@ $(".form-select")
   .eq(0)
   .on("input", function (e) {
     var value = e.currentTarget.value;
+    var pantsSize = `<option>28</option>
+    <option>30</option>
+    <option>32</option>`;
+    var shirtSize = `<option>95</option>
+      <option>100</option>
+      <option>105</option>`;
     if (value == "셔츠") {
       $(".form-select").eq(1).removeClass("hide");
+      $(".form-select").eq(1).html(shirtSize);
+    } else if (value == "바지") {
+      $(".form-select").eq(1).removeClass("hide");
+      $(".form-select").eq(1).html(pantsSize);
     } else {
       $(".form-select").eq(1).addClass("hide");
     }
   });
+
+var tem = "<p>안녕</p>";
+document.querySelector("#test").insertAdjacentHTML("beforeend", tem);
+$("#test").append(tem);
