@@ -20,7 +20,7 @@ function tabOpen(i) {
   content.eq(i).addClass("show");
 }
 
-var car = { name: "제네시스", price: 90000000, color: "black" };
+var car = { name: "제네시스", price: [50000, 3000, 10000], color: "black" };
 document.querySelector(".car-title").innerHTML = car.name;
-document.querySelector(".car-price").innerHTML = car.price;
+document.querySelector(".car-price").innerHTML = car.price[0];
 document.querySelector(".car-color").innerHTML = car.color;
