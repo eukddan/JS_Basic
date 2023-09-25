@@ -29,6 +29,8 @@ $(".form-select")
   .eq(0)
   .on("input", function (e) {
     var value = e.currentTarget.value;
+    var pants = [28, 30, 32, 34];
+    var shirts = [95, 100, 105];
     var pantsSize = `<option>28</option>
     <option>30</option>
     <option>32</option>`;
@@ -37,10 +39,18 @@ $(".form-select")
       <option>105</option>`;
     if (value == "셔츠") {
       $(".form-select").eq(1).removeClass("hide");
-      $(".form-select").eq(1).html(shirtSize);
+      $(".form-select").eq(1).html("");
+      shirts.forEach((a) => {
+        $(".form-select").eq(1).append(`<option>${a}</option>`);
+      });
+      // $(".form-select").eq(1).html(shirtSize);
     } else if (value == "바지") {
       $(".form-select").eq(1).removeClass("hide");
-      $(".form-select").eq(1).html(pantsSize);
+      $(".form-select").eq(1).html("");
+      pants.forEach((size) => {
+        $(".form-select").eq(1).append(`<option>${size}</option>`);
+      });
+      // $(".form-select").eq(1).html(pantsSize);
     } else {
       $(".form-select").eq(1).addClass("hide");
     }
