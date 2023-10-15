@@ -17,3 +17,11 @@ $.get("https://codingapple1.github.io/hello.txt")
   .fail(() => {
     console.log("실패");
   });
+
+$.get("https://codingapple1.github.io/price.json")
+  .done((data) => {
+    console.log(data.price);
+  })
+  .fail(() => {
+    console.log("실패");
+  });
