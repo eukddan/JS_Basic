@@ -9,3 +9,11 @@ for (var i = 0; i < products.length; i++) {
   document.querySelectorAll(".card-body p")[i].innerHTML =
     "가격 : " + products[i].price;
 }
+
+$.get("https://codingapple1.github.io/hello.txt")
+  .done(function (data) {
+    console.log(data);
+  })
+  .fail(() => {
+    console.log("실패");
+  });
