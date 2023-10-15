@@ -4,24 +4,15 @@ var products = [
   { id: 2, price: 60000, title: "Black Monastery" },
 ];
 
-for (var i = 0; i < products.length; i++) {
-  document.querySelectorAll(".card-body h5")[i].innerHTML = products[i].title;
-  document.querySelectorAll(".card-body p")[i].innerHTML =
-    "가격 : " + products[i].price;
-}
+// for (var i = 0; i < products.length; i++) {
+//   document.querySelectorAll(".col-sm-4 h5")[i].innerHTML = products[i].title;
+//   document.querySelectorAll(".col-sm-4 p")[i].innerHTML =
+//     "가격 : " + products[i].price;
+// }
 
-$.get("https://codingapple1.github.io/hello.txt")
-  .done(function (data) {
-    console.log(data);
-  })
-  .fail(() => {
-    console.log("실패");
-  });
-
-$.get("https://codingapple1.github.io/price.json")
-  .done((data) => {
-    console.log(data.price);
-  })
-  .fail(() => {
-    console.log("실패");
-  });
+var tem = ` <div class="col-sm-4">
+<img src="https://via.placeholder.com/600" class="w-100" />
+<h5>Card title</h5>
+<p>가격 : 70000</p>
+</div>`;
+$(".row").append(tem);
