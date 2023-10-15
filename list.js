@@ -10,9 +10,11 @@ var products = [
 //     "가격 : " + products[i].price;
 // }
 
-var tem = ` <div class="col-sm-4">
+products.forEach((data, i) => {
+  var tem = ` <div class="col-sm-4">
 <img src="https://via.placeholder.com/600" class="w-100" />
-<h5>Card title</h5>
-<p>가격 : 70000</p>
+<h5>${data.title}</h5>
+<p>가격: ${products[i].price}</p>
 </div>`;
-$(".row").append(tem);
+  $(".row").append(tem);
+});
