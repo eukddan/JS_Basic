@@ -18,3 +18,9 @@ products.forEach((data, i) => {
 </div>`;
   $(".row").append(tem);
 });
+
+$("#more").click(function () {
+  $.get("https://codingapple1.github.io/js/more1.json").done((data) => {
+    console.log(data);
+  });
+});
