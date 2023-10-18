@@ -19,14 +19,32 @@ products.forEach((data, i) => {
   $(".row").append(tem);
 });
 
+var count = 0;
+function btn_click() {
+  count++;
+}
 $("#more").click(function () {
+  btn_click();
+  console.log(count);
   $.get("https://codingapple1.github.io/js/more1.json").done((data) => {
     data.forEach((a, i) => {
       var tem = ` <div class="col-sm-4">
-    <img src="https://via.placeholder.com/600" class="w-100" />
-    <h5>${a.title}</h5>
-    <p>가격: ${data[i].price}</p>
-    </div>`;
+        <img src="https://via.placeholder.com/600" class="w-100" />
+        <h5>${a.title}</h5>
+        <p>가격: ${data[i].price}</p>
+        </div>`;
+      $(".row").append(tem);
+    });
+  });
+});
+$("#more").click(function () {
+  $.get("https://codingapple1.github.io/js/more2.json").done((data) => {
+    data.forEach((a, i) => {
+      var tem = ` <div class="col-sm-4">
+        <img src="https://via.placeholder.com/600" class="w-100" />
+        <h5>${a.title}</h5>
+        <p>가격: ${data[i].price}</p>
+        </div>`;
       $(".row").append(tem);
     });
   });
