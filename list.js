@@ -19,34 +19,42 @@ products.forEach((data, i) => {
   $(".row").append(tem);
 });
 
+// function more_btn() {
+//   data.forEach((a, i) => {
+//     var tem = ` <div class="col-sm-4">
+//       <img src="https://via.placeholder.com/600" class="w-100" />
+//       <h5>${a.title}</h5>
+//       <p>가격: ${data[i].price}</p>
+//       </div>`;
+//     $(".row").append(tem);
+//   });
+// }
+
 var count = 0;
+
+var more_btn = function (data) {
+  data.forEach((a, i) => {
+    var tem = ` <div class="col-sm-4">
+      <img src="https://via.placeholder.com/600" class="w-100" />
+      <h5>${a.title}</h5>
+      <p>가격: ${data[i].price}</p>
+      </div>`;
+    $(".row").append(tem);
+  });
+};
 
 $("#more").click(function () {
   count++;
   console.log(count);
-  if (count >= 2) {
+  if (count > 2) {
     $("#more").hide();
   } else if (count == 1) {
     $.get("https://codingapple1.github.io/js/more1.json").done((data) => {
-      data.forEach((a, i) => {
-        var tem = ` <div class="col-sm-4">
-          <img src="https://via.placeholder.com/600" class="w-100" />
-          <h5>${a.title}</h5>
-          <p>가격: ${data[i].price}</p>
-          </div>`;
-        $(".row").append(tem);
-      });
+      more_btn(data);
     });
   } else {
     $.get("https://codingapple1.github.io/js/more2.json").done((data) => {
-      data.forEach((a, i) => {
-        var tem = ` <div class="col-sm-4">
-            <img src="https://via.placeholder.com/600" class="w-100" />
-            <h5>${a.title}</h5>
-            <p>가격: ${data[i].price}</p>
-            </div>`;
-        $(".row").append(tem);
-      });
+      more_btn(data);
     });
   }
 });
