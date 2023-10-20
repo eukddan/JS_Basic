@@ -4,6 +4,26 @@ var products = [
   { id: 2, price: 60000, title: "Black Monastery" },
 ];
 
+// var price_products = products.sort(function (a, b) {
+//   return a.price - b.price;
+// });
+// console.log(products);
+
+$("#price").click(() => {
+  products.sort(function (a, b) {
+    return a.price - b.price;
+  });
+  $(".row").html("");
+  products.forEach((data, i) => {
+    var tem = ` <div class="col-sm-4">
+  <img src="https://via.placeholder.com/600" class="w-100" />
+  <h5>${data.title}</h5>
+  <p>가격: ${products[i].price}</p>
+  </div>`;
+    $(".row").append(tem);
+  });
+});
+
 // for (var i = 0; i < products.length; i++) {
 //   document.querySelectorAll(".col-sm-4 h5")[i].innerHTML = products[i].title;
 //   document.querySelectorAll(".col-sm-4 p")[i].innerHTML =
