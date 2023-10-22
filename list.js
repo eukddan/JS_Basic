@@ -9,6 +9,22 @@ var products = [
 // });
 // console.log(products);
 
+$("#price_6").click(() => {
+  var products_6 = products.filter((a) => {
+    return a.price <= 60000;
+  });
+  console.log(products_6);
+  $(".row").html("");
+  products_6.forEach((data, i) => {
+    var tem = ` <div class="col-sm-4">
+  <img src="https://via.placeholder.com/600" class="w-100" />
+  <h5>${data.title}</h5>
+  <p>가격: ${products_6[i].price}</p>
+  </div>`;
+    $(".row").append(tem);
+  });
+});
+
 $("#price").click(() => {
   products.sort(function (a, b) {
     return a.price - b.price;
