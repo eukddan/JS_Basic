@@ -10,9 +10,10 @@ var products = [
 // console.log(products);
 
 $("#price_6").click(() => {
-  var products_6 = products.filter((a) => {
-    return a.price <= 60000;
-  });
+  // var products_6 = products.filter((a) => {
+  //   return a.price <= 60000;
+  // });
+  var products_6 = products.filter((a) => a.price <= 60000);
   console.log(products_6);
   $(".row").html("");
   products_6.forEach((data, i) => {
