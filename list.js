@@ -41,6 +41,11 @@ $("#price").click(() => {
   });
 });
 
+localStorage.setItem("하나", "kim");
+localStorage.setItem("둘", "yu");
+localStorage.setItem("셋", "chan");
+console.log(localStorage.getItem("하나"));
+localStorage.removeItem("셋");
 // for (var i = 0; i < products.length; i++) {
 //   document.querySelectorAll(".col-sm-4 h5")[i].innerHTML = products[i].title;
 //   document.querySelectorAll(".col-sm-4 p")[i].innerHTML =
@@ -52,6 +57,7 @@ products.forEach((data, i) => {
 <img src="https://via.placeholder.com/600" class="w-100" />
 <h5>${data.title}</h5>
 <p>가격: ${products[i].price}</p>
+<button class="buy">구매</button>
 </div>`;
   $(".row").append(tem);
 });
