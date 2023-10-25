@@ -62,6 +62,10 @@ products.forEach((data, i) => {
   $(".row").append(tem);
 });
 
+$(".buy").click(function () {
+  var title = $(e.target).siblings("h5").text();
+  console.log(title);
+});
 // function more_btn() {
 //   data.forEach((a, i) => {
 //     var tem = ` <div class="col-sm-4">
