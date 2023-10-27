@@ -31,14 +31,15 @@ $("#price").click(() => {
     return a.price - b.price;
   });
   $(".row").html("");
-  products.forEach((data, i) => {
-    var tem = ` <div class="col-sm-4">
-  <img src="https://via.placeholder.com/600" class="w-100" />
-  <h5>${data.title}</h5>
-  <p>가격: ${products[i].price}</p>
-  </div>`;
-    $(".row").append(tem);
-  });
+  product();
+  // products.forEach((data, i) => {
+  //   var tem = ` <div class="col-sm-4">
+  // <img src="https://via.placeholder.com/600" class="w-100" />
+  // <h5>${data.title}</h5>
+  // <p>가격: ${products[i].price}</p>
+  // </div>`;
+  //   $(".row").append(tem);
+  // });
 });
 
 localStorage.setItem("하나", "kim");
@@ -52,20 +53,41 @@ localStorage.removeItem("셋");
 //     "가격 : " + products[i].price;
 // }
 
-products.forEach((data, i) => {
-  var tem = ` <div class="col-sm-4">
-<img src="https://via.placeholder.com/600" class="w-100" />
-<h5>${data.title}</h5>
-<p>가격: ${products[i].price}</p>
-<button class="buy">구매</button>
-</div>`;
-  $(".row").append(tem);
-});
+var product = function () {
+  products.forEach((data, i) => {
+    var tem = ` <div class="col-sm-4">
+  <img src="https://via.placeholder.com/600" class="w-100" />
+  <h5>${data.title}</h5>
+  <p>가격: ${products[i].price}</p>
+  <button class="buy">구매</button>
+  </div>`;
+    $(".row").append(tem);
+  });
+};
+
+product();
+
+// products.forEach((data, i) => {
+//   var tem = ` <div class="col-sm-4">
+// <img src="https://via.placeholder.com/600" class="w-100" />
+// <h5>${data.title}</h5>
+// <p>가격: ${products[i].price}</p>
+// <button class="buy">구매</button>
+// </div>`;
+//   $(".row").append(tem);
+// });
 
 $(".buy").click(function () {
   var title = $(e.target).siblings("h5").text();
   console.log(title);
 });
+
+var arr = [1, 2, 3, 4, 5];
+var newArr = JSON.stringify(arr);
+localStorage.setItem("num", newArr);
+var getNum = localStorage.getItem("num");
+console.log(JSON.parse(getNum));
+
 // function more_btn() {
 //   data.forEach((a, i) => {
 //     var tem = ` <div class="col-sm-4">
