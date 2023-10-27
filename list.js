@@ -82,11 +82,17 @@ $(".buy").click(function () {
   console.log(title);
 });
 
-var arr = [1, 2, 3, 4, 5];
-var newArr = JSON.stringify(arr);
-localStorage.setItem("num", newArr);
-var getNum = localStorage.getItem("num");
-console.log(JSON.parse(getNum));
+// var arr = [1, 2, 3, 4, 5];
+// var newArr = JSON.stringify(arr);
+// localStorage.setItem("num", newArr);
+// var getNum = localStorage.getItem("num");
+// console.log(JSON.parse(getNum));
+
+var arr1 = [1, 2, 3, 4, 5];
+var newArr1 = JSON.stringify(arr1);
+sessionStorage.setItem("num1", newArr1);
+var getNum1 = sessionStorage.getItem("num1");
+console.log(JSON.parse(getNum1));
 
 // function more_btn() {
 //   data.forEach((a, i) => {
