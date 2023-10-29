@@ -42,11 +42,6 @@ $("#price").click(() => {
   // });
 });
 
-localStorage.setItem("하나", "kim");
-localStorage.setItem("둘", "yu");
-localStorage.setItem("셋", "chan");
-console.log(localStorage.getItem("하나"));
-localStorage.removeItem("셋");
 // for (var i = 0; i < products.length; i++) {
 //   document.querySelectorAll(".col-sm-4 h5")[i].innerHTML = products[i].title;
 //   document.querySelectorAll(".col-sm-4 p")[i].innerHTML =
@@ -67,6 +62,11 @@ var product = function () {
 
 product();
 
+$(".buy").click(function (e) {
+  var title = $(e.target).siblings("h5").text();
+  localStorage.setItem("cart", JSON.stringify([title]));
+});
+
 // products.forEach((data, i) => {
 //   var tem = ` <div class="col-sm-4">
 // <img src="https://via.placeholder.com/600" class="w-100" />
@@ -76,11 +76,6 @@ product();
 // </div>`;
 //   $(".row").append(tem);
 // });
-
-$(".buy").click(function () {
-  var title = $(e.target).siblings("h5").text();
-  console.log(title);
-});
 
 // var arr = [1, 2, 3, 4, 5];
 // var newArr = JSON.stringify(arr);
