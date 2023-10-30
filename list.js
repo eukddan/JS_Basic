@@ -64,7 +64,13 @@ product();
 
 $(".buy").click(function (e) {
   var title = $(e.target).siblings("h5").text();
-  localStorage.setItem("cart", JSON.stringify([title]));
+  if (localStorage.getItem("cart") != null) {
+    var get_Product = JSON.parse(localStorage.cart);
+    get_Product.push(title);
+    localStorage.setItem("cart", JSON.stringify(get_Product));
+  } else {
+    localStorage.setItem("cart", JSON.stringify([title]));
+  }
 });
 
 // products.forEach((data, i) => {
