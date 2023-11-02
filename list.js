@@ -67,7 +67,7 @@ $(".buy").click(function (e) {
   if (localStorage.getItem("cart") != null) {
     var get_Product = JSON.parse(localStorage.cart);
     if (get_Product.includes(title)) {
-      console.log("중복임");
+      console.log("에러 메시지: " + "중복된 상품을 선택하셨습니다.");
     } else {
       get_Product.push(title);
       localStorage.setItem("cart", JSON.stringify(get_Product));
