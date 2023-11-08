@@ -123,3 +123,30 @@ document.querySelector(".black-bg").addEventListener("click", function (e) {
     document.querySelector(".black-bg").classList.remove("show-modal");
   }
 });
+
+var start_x = 0;
+var done_x = 0;
+var down = false;
+$(".slide-box")
+  .eq(0)
+  .on("mousedown", function (e) {
+    //e.clientX: 현재 마우스 X축 좌표
+    start_x = e.clientX;
+    down = true;
+  });
+
+$(".slide-box")
+  .eq(0)
+  .on("mouseup", function (e) {
+    down = false;
+  });
+
+$(".slide-box")
+  .eq(0)
+  .on("mousemove", function (e) {
+    //e.clientX: 현재 마우스 X축 좌표
+    done_x = e.clientX - start_x;
+    if (down == true) {
+      $(".slide-container").css("transform", `translateX(${done_x}px)`);
+    }
+  });
