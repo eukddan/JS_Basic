@@ -140,10 +140,17 @@ $(".slide-box")
   .on("mouseup", function (e) {
     down = false;
     if (done_x < -200) {
-      $(".slide-container").css("transform", "translateX(-100vw)");
+      $(".slide-container")
+        .css("transition", "all 0.5s")
+        .css("transform", "translateX(-100vw)");
     } else {
-      $(".slide-container").css("transform", "translateX(0)");
+      $(".slide-container")
+        .css("transition", "all 0.5s")
+        .css("transform", "translateX(0)");
     }
+    setTimeout(() => {
+      $(".slide-container").css("transition", "none");
+    }, 500);
   });
 
 $(".slide-box")
