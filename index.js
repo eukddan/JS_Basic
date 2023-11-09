@@ -139,6 +139,11 @@ $(".slide-box")
   .eq(0)
   .on("mouseup", function (e) {
     down = false;
+    if (done_x < -200) {
+      $(".slide-container").css("transform", "translateX(-100vw)");
+    } else {
+      $(".slide-container").css("transform", "translateX(0)");
+    }
   });
 
 $(".slide-box")
